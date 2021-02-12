@@ -1,8 +1,10 @@
 class Book {
-  constructor(title, author, isbn) {
+  constructor(title, author, isbn, total, grand) {
     this.title = title;
     this.author = author;
     this.isbn = isbn;
+    this.total = total;
+    this.grand = grand;
   }
 }
 
@@ -16,6 +18,8 @@ class UI {
       <td>${book.title}</td>
       <td>${book.author}</td>
       <td>${book.isbn}</td>
+      <td>${book.total}</td>
+      <td>${book.grand}</td>
       <td><a href="#" class="delete">X<a></td>
     `;
   
@@ -52,8 +56,8 @@ class UI {
     document.getElementById('title').value = '';
     document.getElementById('author').value = '';
     document.getElementById('isbn').value = '';
-
-
+    document.getElementById('total').value = '';
+    document.getElementById('grand').value = '';
   }
 }
 
@@ -110,11 +114,13 @@ document.getElementById('book-form').addEventListener('submit', function(e){
   // Get form values
   const title = document.getElementById('title').value,
         author = document.getElementById('author').value,
-        isbn = document.getElementById('isbn').value
+        isbn = document.getElementById('isbn').value,
+        total = document.getElementById('total').value,
+        grand = document.getElementById('grand').value
 
 
   // Instantiate book
-  const book = new Book(title, author, isbn, );
+  const book = new Book(title, author, isbn, total, grand);
 
   // Instantiate UI
   const ui = new UI();
@@ -122,7 +128,7 @@ document.getElementById('book-form').addEventListener('submit', function(e){
   console.log(ui);
 
   // Validate
-  if(title === '' || author === '' || isbn === '') {
+  if(title === '' || author === '' || isbn === '' || total === '' || grand === '') {
     // Error alert
     ui.showAlert('لطفا خانه خالی ها را کامل تکمیل نمایید', 'error');
   } else {
