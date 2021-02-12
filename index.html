@@ -6,6 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
   <style>
+    input[type=date] {
+      height: 38px;
+      padding: 6px 10px;
+      background-color: #fff;
+      border: 1px solid #D1D1D1;
+      border-radius: 4px;
+      box-shadow: none;
+      box-sizing: border-box;
+    }
+
     .success, .error {
       color: white;
       padding: 5px;
@@ -24,45 +34,48 @@
 </head>
 <body>
   <div class="container">
-    <h1>Add Book</h1>
-    <form id="book-form">
-      <div>
-        <label for="title">تاریخ</label>
-        <input type="text" id="title" class="u-full-width">
-      </div>
-      <div>
-        <label for="author">برده گی یا رسیده گی</label>
-        <input type="text" id="author" class="u-full-width">
-      </div>
-      <div>
-        <label for="isbn">فی</label>
-        <input type="text" id="isbn" class="u-full-width">
-      </div>
-       <div>
-        <label for="isbn">جمله</label>
-        <input type="text" id="isbn" class="u-full-width">
-      </div>
-      <div>
-        <label for="isbn">مجموعه</label>
-        <input type="text" id="isbn" class="u-full-width">
-      </div>
-      <div>
-        <input type="submit" value="ذخیره" class="u-full-width">
-      </div>
-    </form>
-    <table class="u-full-width">
-      <thead>
-        <tr>
-          <th>تاریخ</th>
-          <th>برده گی یا رسیده گی</th>
-          <th>فی</th>
-          <th>جمله</th>
-          <th>مجموعه</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="book-list"></tbody>
-    </table>
+    <div class="row">
+      <h1>صفحه رسید و برد</h1>
+      <form id="book-form">
+        <div>
+          <label for="title">تاریخ</label>
+          <input type="date" id="title" class="u-full-width">
+        </div>
+        <div>
+          <label for="author">برده گی یا رسیده گی</label>
+          <input type="text" id="author" class="u-full-width">
+        </div>
+        <div>
+          <label for="isbn">فی</label>
+          <input type="text" id="isbn" class="u-full-width">
+        </div>
+        <div>
+          <label for="total">جمله</label>
+          <input type="text" id="total" class="u-full-width">
+        </div>
+        <div>
+          <label for="grand">مجموعه</label>
+          <input type="text" id="grand" class="u-full-width">
+        </div>
+        <div>
+          <input type="submit" value="ذخیره" class="u-full-width">
+        </div>
+      </form>
+
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <th>تاریخ</th>
+            <th>برده گی یا رسیده گی</th>
+            <th>فی</th>
+            <th>جمله</th>
+            <th>مجموعه</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="book-list"></tbody>
+      </table>
+    </div>
   </div>
 
   <script src="appes6.js"></script>
